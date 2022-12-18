@@ -12,17 +12,19 @@ int main()
     while(q!=0)
     {
         d=q%10;
+        for(i=d;i>1;i--)
+        {
+            fact=fact*i;
+        }
+        sum=sum+fact;
+        fact=1;
         q=q/10;
     }
     if(d<0)
     {
         exit(1);
     }
-    for(i=d;i>1;i--)
-    {
-        fact=fact*i;
-        sum=sum+fact;
-    }
+    
     
     if(sum==n)
     {
