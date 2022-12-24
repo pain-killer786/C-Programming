@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/USER/Desktop/New folder/C-Programming/Programming/Basic Loops/Pattern",
-      "program": "c:/Users/USER/Desktop/New folder/C-Programming/Programming/Basic Loops/Pattern/build/Debug/outDebug",
+      "cwd": "c:/Users/USER/Desktop/New folder/C-Programming/Programming/Data Structures And Algorithms",
+      "program": "c:/Users/USER/Desktop/New folder/C-Programming/Programming/Data Structures And Algorithms/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
