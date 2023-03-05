@@ -1,30 +1,70 @@
 #include<stdio.h>
 #include<conio.h>
-void main()
+
+int main()
 {
-    float x[10],y[10],X,p=1,u,h,val;
-    int i,j,n;
-    printf("OUTPUT\n");
-    printf("Number of arguments \n");
+    int n,i,j;
+    float x[10],y[10][10],sum,p,u,temp;
+    int fact(int);
+    printf("\nhow many record you will be enter: ");
     scanf("%d",&n);
-    printf("Enter the value of x and f(x)\n");
-    printf("x\f\tf(x)\n");
-    for(i=1;i<=n;i++);
-    scanf("%f \t %f", &x[i], &y[i]);
-    h=x[2]-x[1];
-    printf("Value of X where the functional value is to be determined:");
-    scanf("%f",&X);
-    u=(X-x[i])/h;
-    val=y[1];
-    for(i=1;i<=n-1;i++);
+    for(i=0; i<n; i++)
     {
-        for(j=1;j<=n-1;j++)
-        {
-            y[j]=y[j+1]-y[j];
-        }
-        p=p*(u-i+1)/i;
-        val=val+p*y[i];
+        printf("\n\nenter the value of x%d: ",i);
+        scanf("%f",&x[i]);
+        printf("\n\nenter the value of f(x%d): ",i);
+        scanf("%f",&y[i][0]);
     }
-    printf("The value of f(%f) = %f", X, val);
-    getch();
+    printf("\n\nEnter X for finding f(x): ");
+    scanf("%f",&p);
+
+    //*********** FORWARD DIFFERENCE TABLE ****************//
+
+    for(i=1;i<n;i++)
+    {
+        for(j=0;j<n-i;j++)
+        {
+            y[j][i]=y[j+1][i-1]-y[j][i-1];
+        }
+    }
+
+//*********** DISPLAYING FORWARD DIFFERENCE TABLE*********//
+
+printf("\n_____________________________________________________\n");
+printf("\n  x(i)\t   y(i)\t   y1(i)   y2(i)   y3(i)   y4(i)");
+printf("\n_____________________________________________________\n");
+for(i=0;i<n;i++)
+{
+printf("\n %.3f",x[i]);
+for(j=0;j<n-i;j++)
+{
+printf("   ");
+printf(" %.3f",y[i][j]);
+}
+printf("\n");
+}
+
+//***************** NEWTON'S FORWARD INTERPOLATION FORMULA *********//
+
+u=(p-x[0])/(x[1]-x[0]);
+sum=y[0][0];
+temp=u;
+for(i=1;i<n;i++)
+{
+sum=sum+(temp*y[0][i])/fact(i);
+temp=temp*(u-i);
+}
+
+printf("\n\n f(%.2f) = %f ",p,sum); // VALUE OF f(x) at x
+getch();
+}
+
+int fact(int n)
+{
+int i,fac=1;
+if(n==0)
+return(1);
+for(i=n;i>=1;i--)
+fac=fac*i;
+return(fac);
 }
