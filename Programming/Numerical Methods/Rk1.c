@@ -1,15 +1,26 @@
 #include<stdio.h>
 #include<conio.h>
-int main()
+float f(float x, float y)
 {
-    float x0,y0,m=0,y,x,h,xn;
-    int n;
-    printf("\n Enter the step size");
+    return ((x*x)+(y*y));
+}
+
+void main()
+{
+    float xn,xo,yo,yn,h,k1;
+    int i,n;
+    printf("Enter the value of n:\n");
     scanf("%d",&n);
-    printf("\n Enter the values of x0,y0,xn");
-    scanf("%f %f %f",&x0,&y0,&xn);
-    h=(xn-x0)/n;
-    y=(x0*x0)+(y0*y0);
-    m=(y*h)+y0;
-    printf("\n The value of f(%f) is %f", xn,m);
+    printf("Enter the value of xo,yo,xn:\n");
+    scanf("%f%f%f",&xo,&yo,&xn);
+
+    h=(xn-xo)/n;
+    for(i=0;i<n;i++)
+    {
+        k1=yo+h*f(xo,yo);
+    }
+
+    yn=k1;
+    printf("The value of 1st order is %f", yn);
+    getch();
 }
