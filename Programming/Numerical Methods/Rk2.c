@@ -7,23 +7,15 @@ float f(float x, float y)
 
 void main()
 {
-    float xn,xo,yo,yn,h,k1,k2,k3,k4;
-    int i,n;
-    printf("Enter the value of n:\n");
-    scanf("%d",&n);
-    printf("Enter the value of xo,yo,xn:\n");
+    float xn,xo,yo,yn,h,k1,k2;
+    printf("Enter the value of xo,yo,xn respectively:\n");
     scanf("%f%f%f",&xo,&yo,&xn);
 
-    h=(xn-xo)/n;
-    for(i=0;i<n;i++)
-    {
-        k1=h*f(xo,yo);
-        k2=h*f((xo+h/2),(yo+k1/2));
-        k3=h*f((xo+h/2),(yo+k2/2));
-        k4=h*f((xo+h),(yo+k3));
-    }
+    h=(xn-xo);
+    k1=h*f(xo,yo);
+    k2=h*f(xo+h,yo+h*f(xo,yo));
 
-    yn=yo+(k1+2*k2*k3+k4)/6;
+    yn=yo+(k1+k2)/2;
     printf("The value of 2nd order is %f", yn);
     getch();
 }
