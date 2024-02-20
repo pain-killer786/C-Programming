@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "Third.C": "cpp"
-    }
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }
