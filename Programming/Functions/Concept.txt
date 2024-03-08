@@ -8,3 +8,13 @@ Properties of Function:-
     Execution always starts from main
     A  function gets called directly or indirectly from main
     There can be multiple functions in a program.
+
+Arguement
+    Values that are passed in a function call
+    used to send Values
+    Actual Parameter
+
+Parameter
+    Values in function declaration and defination
+    Used to receive Values
+    Formal Parameter
