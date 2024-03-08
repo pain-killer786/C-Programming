@@ -1,0 +1,5 @@
+A function is a block of code that performs a particular task.
+
+Features of Function:-
+    It can be used multiple times.
+    It increases code reusability.
