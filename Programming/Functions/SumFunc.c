@@ -7,7 +7,7 @@ int main()
     int a,b;
     printf("Enter the values of a and b");
     scanf("%d %d", &a, &b);   
-    printf("The sum of teo number is %d",Sum(a,b)); //Arguemeny / Actual Parameter
+    printf("The sum of teo number is %d",Sum(a,b)); //Argument / Actual Parameter
     return 0;
 }
 
