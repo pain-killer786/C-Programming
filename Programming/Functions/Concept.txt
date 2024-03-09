@@ -22,3 +22,6 @@ Parameter
 Note
     Function Can only return one value at a time 
     Changes to parameters in function don't change the values in calling function 
+
+Recursion
+    When a function calls itself
