@@ -1,0 +1,20 @@
+The issue might be due to the space in the directory path (`My Digital Garage`). Git might not correctly interpret the `.gitignore` rule because of this. To fix it, you can try escaping the space in the path or enclosing the folder name in quotes when working with Git commands.
+
+Additionally, ensure that the `.vscode/` folder is not already tracked by Git. If it is, you need to untrack it first. Here's how:
+
+1. Remove the `.vscode/` folder from Git's tracking:
+    ```bash
+    git rm -r --cached .vscode/
+    ```
+
+2. Commit the changes:
+    ```bash
+    git commit -m "Stop tracking .vscode folder"
+    ```
+
+3. Verify that the `.gitignore` rule is working by creating a new file in `.vscode/` and checking its status:
+    ```bash
+    git status
+    ```
+
+If `.vscode/` is ignored, it won't appear in the output of `git status`.
